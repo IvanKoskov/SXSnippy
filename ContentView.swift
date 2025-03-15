@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
     @EnvironmentObject var globalfile: GlobalDataModel
+    @State private var showSettingsPopOver: Bool = false
 
     var body: some View {
         VStack {
@@ -92,7 +93,7 @@ struct ContentView: View {
             
             HStack {
                 Button {
-                    
+                    showSettingsPopOver = true
                 } label: {
                     Image(systemName: "gear")
                     Text("Settngs")
@@ -101,9 +102,36 @@ struct ContentView: View {
                 .padding(.leading, 1)
                 .font(.system(size: 16))
                 .padding(.top, 6)
+                .popover(isPresented: $showSettingsPopOver) {
+                    ScrollView {
+                        VStack {
+                            
+                            Text("To be added soon")
+                            
+                            
+                            
+                            
+                            
+                        }
+                        
+                        .frame(width: 300, height: 200)
+                        
+                    }
+                    
+                }
+                
                
+                
+                
+        
+                
+                
+                
+                
             }
-
+            
+            
+        
             
             
             
