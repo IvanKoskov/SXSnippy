@@ -40,7 +40,7 @@ struct SXSnippyApp: App {
         FramelessWindow("Snippies editor", id: "file-window") {
             editorView()
                 .environmentObject(globaldata)
-                .frame(minWidth: 400, minHeight: 400)
+                .frame(width: 400, height: 530)
         
                     .background(VisualEffect())
                 .fixedSize()

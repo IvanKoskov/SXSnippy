@@ -33,4 +33,24 @@
     }
 }
 
+- (void)PathalertWithMessage:(nonnull NSString *)message {
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.alertStyle = NSAlertStyleInformational;
+    alert.messageText = message;
+    alert.informativeText = @"Changing anything manually on this path is not advised!";
+ 
+    
+    [alert addButtonWithTitle:@"Ok"];    // First button
+
+   
+    NSInteger result = [alert runModal];
+    
+    
+    if (result == NSAlertFirstButtonReturn) {
+        printf("dismissed");
+    }
+}
+
+
+
 @end

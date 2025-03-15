@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface alertView : NSObject
 
 -(void)alertWithMessage:(NSString *)message;
+-(void)PathalertWithMessage:(nonnull NSString *)message;
+
 
 @end
 

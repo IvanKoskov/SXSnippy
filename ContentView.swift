@@ -70,9 +70,38 @@ struct ContentView: View {
             Divider()
             
             List {
+                Section {
+                    
+                    Button {
+                        let alert = alertView()
+                        alert.pathalert(withMessage: globalfile.pathToAllSnipets)
+                    } label: {
+                        Text("Raw path to files")
+                            .font(.system(size: 10))
+                    }
+                    .buttonStyle(PlainButtonStyle())
+
+                        
+                }
                 ForEach($globalfile.filesInTheFolder, id: \.self) { $file in
                     Text(file) // assuming `file` has a property `name`
                 }
+            }
+            
+            Divider()
+            
+            HStack {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "gear")
+                    Text("Settngs")
+                }
+                .buttonStyle(PlainButtonStyle())
+                .padding(.leading, 1)
+                .font(.system(size: 16))
+                .padding(.top, 6)
+               
             }
 
             
@@ -80,7 +109,7 @@ struct ContentView: View {
             
             Spacer()
         }
-        .frame(width: 190, height: 200)
+        .frame(width: 230, height: 260)
         .padding()
     }
 }
